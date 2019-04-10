@@ -22,7 +22,8 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "office-ui-fabric-react": "^6.165.0"
+    "office-ui-fabric-react": "^6.165.0",
+    "react-adal": "^0.4.22"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
