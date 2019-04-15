@@ -20,18 +20,25 @@ export default class App extends Component {
               // mode: "no-cors", // no-cors, cors, *same-origin
               // credentials: "include", // include, *same-origin, omit
               headers: {
-                "Content-Type": "application/json" // "Content-Type": "application/x-www-form-urlencoded",
+                // "Content-Type": "application/json", // "Content-Type": "application/x-www-form-urlencoded",
                 // "Access-Control-Allow-Origin": "*",
                 // Host: "fyc-dev.azurewebsites.net"
                 // Origin: ""
+                Accept: "application/json"
+                // "Access-Control-Allow-Origin": "*",
+                // "Access-Control-Allow-Headers":
+                //   "Content-Type,x-requested-with,Access-Control-Allow-Origin",
+                // "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,OPTIONS",
+                // "Content-Type": "application/json; charset=utf-8"
               }
 
               // url: "https://fyc-dev.azurewebsites.net/api/search/users/josh"
             };
             adalApiFetch(
               axios,
-              // "https://cors-anywhere.herokuapp.com/fyc-dev.azurewebsites.net/api/search/users/josh",
-              "https://fyc-dev.azurewebsites.net/api/search/users/josh",
+              window.location.hostname
+                ? "https://cors-anywhere.herokuapp.com/fyc-dev.azurewebsites.net/api/search/users/josh"
+                : "https://fyc-dev.azurewebsites.net/api/search/users/josh",
               options
             )
               .then(function(response) {
@@ -41,8 +48,8 @@ export default class App extends Component {
                 console.log(error);
               });
 
-            const url =
-              "https://fyc-dev.azurewebsites.net/api/search/users/josh";
+            // const url =
+            //   "https://fyc-dev.azurewebsites.net/api/search/users/josh";
 
             // "https://cors-anywhere.herokuapp.com/https://fyc-dev.azurewebsites.net/api/search/users/josh";
             // const resourceGuiId = "748957cb-2ecf-48ee-a937-2303a37d20ab";
@@ -112,7 +119,7 @@ export default class App extends Component {
             //   .catch(function(error) {
             //     console.log(error);
             //   });
-            console.log("click div");
+            console.log("click div", window.location.hostname);
           }}
         >
           Click me!!
